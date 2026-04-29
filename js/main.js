@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkOut <= checkIn
       ) {
         bookingNote.textContent =
-          "Iltimos, ketish sanasi kelish sanasidan keyin bo'lishi kerak.";
+          'For Grand Hotel Uzbekistan, the check-out date must be after the check-in date.';
         totalPrice.textContent = '$0';
         return;
       }
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nights = Math.max(Math.round((checkOut - checkIn) / 86400000), 1);
       const total = nights * pricePerNight;
 
-      bookingNote.textContent = `${nights} kecha va ${guests} mehmon uchun taxminiy hisob.`;
+      bookingNote.textContent = `${nights} night(s) for ${guests} guest(s) at Grand Hotel Uzbekistan.`;
       totalPrice.textContent = `$${total}`;
     };
 
@@ -138,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm && contactNote) {
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      contactNote.textContent = 'Hotel qabulxonasi xabaringizni qabul qildi.';
+      contactNote.textContent =
+        'Grand Hotel Uzbekistan front desk has received your message.';
       contactForm.reset();
     });
   }

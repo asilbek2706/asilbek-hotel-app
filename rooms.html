@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hotel xonalar sahifasi - filtrlash va xonalar ro'yxati."
+    />
+    <title>Hotel | Xonalar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">H</span
+          ><span class="brand-text">Hotel</span></a
+        >
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menyuni ochish</span>
+        </button>
+        <nav class="site-nav" id="site-nav" data-nav>
+          <a href="index.html">Bosh sahifa</a>
+          <a class="active" href="rooms.html">Xonalar</a>
+          <a href="booking.html">Bron qilish</a>
+          <a href="about.html">Biz haqimizda</a>
+          <a href="contact.html">Aloqa</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section" data-reveal>
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Xonalar</p>
+            <h1>Har xil ehtiyoj uchun mos variantlar.</h1>
+          </div>
+          <div
+            class="room-filters"
+            role="tablist"
+            aria-label="Xonalarni filtrlash"
+          >
+            <button
+              class="filter-btn is-active"
+              type="button"
+              data-filter="all"
+            >
+              Hammasi
+            </button>
+            <button class="filter-btn" type="button" data-filter="standard">
+              Standard
+            </button>
+            <button class="filter-btn" type="button" data-filter="deluxe">
+              Deluxe
+            </button>
+            <button class="filter-btn" type="button" data-filter="suite">
+              Suite
+            </button>
+          </div>
+        </div>
+
+        <div class="room-grid" data-room-grid>
+          <article class="card room-card" data-category="standard">
+            <div class="image-placeholder image-placeholder--room">
+              Standard xona rasmi uchun joy
+            </div>
+            <div class="room-card-body">
+              <h2>Standard Room</h2>
+              <p>Qulay va ixcham variant, qisqa dam olish uchun ideal.</p>
+              <div class="room-meta">
+                <span>2 mehmon</span><strong>$90 / kecha</strong>
+              </div>
+            </div>
+          </article>
+          <article class="card room-card" data-category="deluxe">
+            <div class="image-placeholder image-placeholder--room">
+              Deluxe xona rasmi uchun joy
+            </div>
+            <div class="room-card-body">
+              <h2>Deluxe Room</h2>
+              <p>Qo'shimcha makon, ishchi zona va premium qulayliklar.</p>
+              <div class="room-meta">
+                <span>3 mehmon</span><strong>$140 / kecha</strong>
+              </div>
+            </div>
+          </article>
+          <article class="card room-card" data-category="suite">
+            <div class="image-placeholder image-placeholder--room">
+              Suite xona rasmi uchun joy
+            </div>
+            <div class="room-card-body">
+              <h2>Executive Suite</h2>
+              <p>Alohida yashash zonasi va yanada hashamatli muhit.</p>
+              <div class="room-meta">
+                <span>4 mehmon</span><strong>$220 / kecha</strong>
+              </div>
+            </div>
+          </article>
+          <article class="card room-card" data-category="deluxe">
+            <div class="image-placeholder image-placeholder--room">
+              Family xona rasmi uchun joy
+            </div>
+            <div class="room-card-body">
+              <h2>Family Deluxe</h2>
+              <p>Oilaviy safarlar uchun keng, amaliy va qulay xona.</p>
+              <div class="room-meta">
+                <span>4 mehmon</span><strong>$180 / kecha</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>&copy; <span data-year></span> Hotel.</p>
+        <p>
+          Xonalar sahifasi hotel uchun mo'ljallangan filtrlash bilan ishlaydi.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

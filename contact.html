@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hotel aloqa sahifasi - kontakt va manzil."
+    />
+    <title>Hotel | Aloqa</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">H</span
+          ><span class="brand-text">Hotel</span></a
+        >
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menyuni ochish</span>
+        </button>
+        <nav class="site-nav" id="site-nav" data-nav>
+          <a href="index.html">Bosh sahifa</a>
+          <a href="rooms.html">Xonalar</a>
+          <a href="booking.html">Bron qilish</a>
+          <a href="about.html">Biz haqimizda</a>
+          <a class="active" href="contact.html">Aloqa</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section" data-reveal>
+      <div class="container contact-layout">
+        <section class="card contact-card">
+          <p class="eyebrow">Aloqa</p>
+          <h1>Biz bilan tezda bog'laning.</h1>
+          <form class="contact-form" data-contact-form>
+            <label>
+              Ism
+              <input type="text" placeholder="Ismingiz" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="email@example.com" />
+            </label>
+            <label>
+              Xabar
+              <textarea
+                rows="5"
+                placeholder="Hotel haqida xabaringiz"
+              ></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Yuborish</button>
+          </form>
+          <p class="summary-note" data-contact-note>
+            Hotel qabulxonasi uchun xabar qoldiring.
+          </p>
+        </section>
+
+        <aside class="card contact-info">
+          <h2>Manzil va ma'lumotlar</h2>
+          <p>Toshkent shahri, markaziy zona</p>
+          <p>+998 90 000 00 00</p>
+          <p>hello@hotel.uz</p>
+          <div class="image-placeholder image-placeholder--map">
+            Hotel xaritasi uchun joy
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>&copy; <span data-year></span> Hotel.</p>
+        <p>Hotel aloqa sahifasi responsive tartibda ishlaydi.</p>
+      </div>
+    </footer>
+  </body>
+</html>

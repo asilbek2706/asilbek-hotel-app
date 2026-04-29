@@ -1,36 +1,27 @@
 # Grand Hotel Uzbekistan
 
-Grand Hotel Uzbekistan is a responsive, multi-page HTML/CSS/JavaScript hotel website.
+Responsive, multi-page static hotel website built with plain HTML, CSS, and
+JavaScript.
 
-## Structure
+## Pages
 
-- `index.html` - home page
-- `rooms.html` - rooms and filters
-- `booking.html` - booking and price calculator
-- `about.html` - about the brand
-- `contact.html` - contact page
-- `css/styles.css` - shared styles
-- `js/main.js` - interactive logic
-- `assets/images/` - space for hotel images and media files
+- `index.html` - bosh sahifa
+- `rooms.html` - xonalar va filterlar
+- `booking.html` - bron formasi va narx kalkulyatori
+- `about.html` - mehmonxona haqida
+- `contact.html` - aloqa formasi
 
 ## Features
 
-- Responsive layout
-- Multi-page navigation
-- Dynamic mobile menu
+- Bitta real rasm ishlatiladi: `assets/images/bg-pattern.webp`
+- Responsive header va mobile menu
 - Room filtering
 - Booking price calculator
 - Contact form without reload
-- Minimum date validation for booking
-- Image placeholder blocks
-- Clean, easy-to-read code structure
+- Minimum date validation
+- Reusable card, section, image-panel, form va button styles
+- Accessibility-focused labels, aria states va reduced-motion support
 
 ## Launch
 
-1. Open `index.html` in your browser.
-2. Move between pages using the navigation menu.
-3. Try the interactive features on `rooms.html` and `booking.html`.
-
-## Note
-
-The `assets/images/` folder is a placeholder location for real hotel images later.
+Open `index.html` in a browser. No build step or dependency install is required.

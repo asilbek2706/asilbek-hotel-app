@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Grand Hotel Uzbekistan booking page - room selection and stay dates."
+      content="Grand Hotel Uzbekistan bron qilish sahifasi - xona, sana va narx kalkulyatori."
     />
-    <title>Grand Hotel Uzbekistan | Booking</title>
+    <title>Grand Hotel Uzbekistan | Bron qilish</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <header class="site-header" data-header>
       <div class="container nav-shell">
-        <a class="brand" href="index.html"
-          ><span class="brand-mark">G</span
-          ><span class="brand-text">Grand Hotel Uzbekistan</span></a
-        >
+        <a class="brand" href="index.html">
+          <span class="brand-mark">G</span>
+          <span class="brand-text">Grand Hotel Uzbekistan</span>
+        </a>
         <button
           class="nav-toggle"
           type="button"
@@ -25,14 +25,14 @@
           aria-controls="site-nav"
         >
           <span></span><span></span><span></span>
-          <span class="sr-only">Open menu</span>
+          <span class="sr-only">Menyuni ochish</span>
         </button>
         <nav class="site-nav" id="site-nav" data-nav>
-          <a href="index.html">Home</a>
-          <a href="rooms.html">Rooms</a>
-          <a class="active" href="booking.html">Booking</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html">Bosh sahifa</a>
+          <a href="rooms.html">Xonalar</a>
+          <a class="active" href="booking.html">Bron qilish</a>
+          <a href="about.html">Biz haqimizda</a>
+          <a href="contact.html">Aloqa</a>
         </nav>
       </div>
     </header>
@@ -40,11 +40,11 @@
     <main class="section" data-reveal>
       <div class="container booking-layout">
         <section class="card form-card">
-          <p class="eyebrow">Booking</p>
-          <h1>Book your hotel room quickly and easily.</h1>
+          <p class="eyebrow">Bron qilish</p>
+          <h1>Safaringiz narxini tez hisoblang.</h1>
           <form class="booking-form" data-booking-form>
             <label>
-              Room type
+              Xona turi
               <select name="roomType" data-room-select>
                 <option value="90">Standard Room</option>
                 <option value="140">Deluxe Room</option>
@@ -53,15 +53,15 @@
               </select>
             </label>
             <label>
-              Check-in date
+              Kirish sanasi
               <input type="date" name="checkIn" data-check-in required />
             </label>
             <label>
-              Check-out date
+              Chiqish sanasi
               <input type="date" name="checkOut" data-check-out required />
             </label>
             <label>
-              Number of guests
+              Mehmonlar soni
               <input
                 type="number"
                 name="guests"
@@ -72,24 +72,24 @@
               />
             </label>
             <button class="btn btn-primary" type="submit">
-              Calculate booking
+              Narxni hisoblash
             </button>
           </form>
         </section>
 
         <aside class="card summary-card">
-          <h2>Booking summary</h2>
+          <h2>Bron xulosasi</h2>
           <div class="summary-row">
-            <span>Nightly rate</span>
+            <span>Bir tun narxi</span>
             <strong data-night-price>$90</strong>
           </div>
           <div class="summary-row">
-            <span>Estimated total</span>
+            <span>Taxminiy jami</span>
             <strong data-total-price>$0</strong>
           </div>
           <p class="summary-note" data-booking-note>
-            The Grand Hotel Uzbekistan total updates automatically based on your
-            dates and room type.
+            Xona turi va sanalarni tanlaganingizdan keyin umumiy narx shu yerda
+            chiqadi.
           </p>
         </aside>
       </div>
@@ -98,7 +98,7 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <p>&copy; <span data-year></span> Grand Hotel Uzbekistan.</p>
-        <p>Booking shows the hotel service and room rates.</p>
+        <p>Bron qilish va tarif kalkulyatori.</p>
       </div>
     </footer>
   </body>

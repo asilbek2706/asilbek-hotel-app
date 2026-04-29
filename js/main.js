@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.querySelector('[data-contact-form]');
   const contactNote = document.querySelector('[data-contact-note]');
 
+  const currency = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  });
+
+  const formatDate = (date) => date.toISOString().split('T')[0];
+
   yearElements.forEach((element) => {
     element.textContent = new Date().getFullYear();
   });
@@ -28,43 +36,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        if (nav.classList.contains('is-open')) {
-          nav.classList.remove('is-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        }
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
 
-  revealItems.forEach((item) => revealObserver.observe(item));
+    revealItems.forEach((item) => revealObserver.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
 
   counterElements.forEach((element) => {
     const targetValue = Number(element.dataset.counter);
-    const isDecimal = Number.isInteger(targetValue) === false;
-    const duration = 1200;
+    const isDecimal = !Number.isInteger(targetValue);
+    const duration = 1100;
     const startTime = performance.now();
 
     const animateCounter = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      const value = targetValue * progress;
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const value = targetValue * easedProgress;
+
       element.textContent = isDecimal
         ? value.toFixed(1)
         : Math.floor(value).toString();
 
       if (progress < 1) {
         requestAnimationFrame(animateCounter);
+      } else {
+        element.textContent = isDecimal
+          ? targetValue.toFixed(1)
+          : String(targetValue);
       }
     };
 
@@ -73,16 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (roomGrid) {
     filterButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.classList.contains('is-active')));
+
       button.addEventListener('click', () => {
         const filter = button.dataset.filter;
 
-        filterButtons.forEach((item) => item.classList.remove('is-active'));
+        filterButtons.forEach((item) => {
+          item.classList.remove('is-active');
+          item.setAttribute('aria-pressed', 'false');
+        });
+
         button.classList.add('is-active');
+        button.setAttribute('aria-pressed', 'true');
 
         roomGrid.querySelectorAll('[data-category]').forEach((card) => {
-          const shouldShow =
-            filter === 'all' || card.dataset.category === filter;
-          card.style.display = shouldShow ? '' : 'none';
+          const shouldShow = filter === 'all' || card.dataset.category === filter;
+          card.hidden = !shouldShow;
         });
       });
     });
@@ -95,13 +117,25 @@ document.addEventListener('DOMContentLoaded', () => {
     tomorrow.setDate(today.getDate() + 1);
 
     if (checkInInput && checkOutInput) {
-      const formatDate = (date) => date.toISOString().split('T')[0];
       checkInInput.min = formatDate(today);
       checkOutInput.min = formatDate(tomorrow);
+
+      checkInInput.addEventListener('change', () => {
+        const nextDay = new Date(checkInInput.value);
+
+        if (!Number.isNaN(nextDay.getTime())) {
+          nextDay.setDate(nextDay.getDate() + 1);
+          checkOutInput.min = formatDate(nextDay);
+
+          if (checkOutInput.value && new Date(checkOutInput.value) <= new Date(checkInInput.value)) {
+            checkOutInput.value = formatDate(nextDay);
+          }
+        }
+      });
     }
 
     const updateNightPrice = () => {
-      nightPrice.textContent = `$${Number(roomSelect.value)}`;
+      nightPrice.textContent = currency.format(Number(roomSelect.value));
     };
 
     const calculateTotal = (event) => {
@@ -118,16 +152,16 @@ document.addEventListener('DOMContentLoaded', () => {
         checkOut <= checkIn
       ) {
         bookingNote.textContent =
-          'For Grand Hotel Uzbekistan, the check-out date must be after the check-in date.';
-        totalPrice.textContent = '$0';
+          'Chiqish sanasi kirish sanasidan keyin bo‘lishi kerak.';
+        totalPrice.textContent = currency.format(0);
         return;
       }
 
       const nights = Math.max(Math.round((checkOut - checkIn) / 86400000), 1);
       const total = nights * pricePerNight;
 
-      bookingNote.textContent = `${nights} night(s) for ${guests} guest(s) at Grand Hotel Uzbekistan.`;
-      totalPrice.textContent = `$${total}`;
+      bookingNote.textContent = `${nights} tun, ${guests} mehmon uchun taxminiy narx.`;
+      totalPrice.textContent = currency.format(total);
     };
 
     roomSelect.addEventListener('change', updateNightPrice);
@@ -139,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
       contactNote.textContent =
-        'Grand Hotel Uzbekistan front desk has received your message.';
+        'Xabaringiz qabul qilindi. Reception jamoasi tez orada bog‘lanadi.';
       contactForm.reset();
     });
   }

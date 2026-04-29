@@ -1,36 +1,36 @@
-# Hotel
+# Grand Hotel Uzbekistan
 
-Hotel - responsive, multi-page, HTML/CSS/JavaScript asosidagi mehmonxona sayti.
+Grand Hotel Uzbekistan is a responsive, multi-page HTML/CSS/JavaScript hotel website.
 
-## Tuzilma
+## Structure
 
-- `index.html` - bosh sahifa
-- `rooms.html` - xonalar va filtrlar
-- `booking.html` - bron qilish va narx kalkulyatori
-- `about.html` - brend haqida
-- `contact.html` - aloqa sahifasi
-- `css/styles.css` - umumiy uslublar
-- `js/main.js` - interaktiv logika
-- `assets/images/` - hotel rasmlari va media fayllar uchun joy
+- `index.html` - home page
+- `rooms.html` - rooms and filters
+- `booking.html` - booking and price calculator
+- `about.html` - about the brand
+- `contact.html` - contact page
+- `css/styles.css` - shared styles
+- `js/main.js` - interactive logic
+- `assets/images/` - space for hotel images and media files
 
-## Xususiyatlar
+## Features
 
 - Responsive layout
 - Multi-page navigation
-- Dinamik mobil menyu
-- Xonalarni filtrlash
-- Bron qilish narx hisoblagichi
-- Aloqa formasining reload bo'lmasligi
-- Booking sanalari uchun minimal cheklovlar
-- Image placeholder bloklari
-- Clean, o'qishga yengil kod tuzilmasi
+- Dynamic mobile menu
+- Room filtering
+- Booking price calculator
+- Contact form without reload
+- Minimum date validation for booking
+- Image placeholder blocks
+- Clean, easy-to-read code structure
 
-## Ishga tushirish
+## Launch
 
-1. `index.html` faylini brauzerda oching.
-2. Sahifalar orasida navigation orqali o'ting.
-3. `rooms.html` va `booking.html` sahifalaridagi interaktiv funksiyalarni sinab ko'ring.
+1. Open `index.html` in your browser.
+2. Move between pages using the navigation menu.
+3. Try the interactive features on `rooms.html` and `booking.html`.
 
-## Eslatma
+## Note
 
-`assets/images/` papkasi hotelning real rasmlari bilan keyinroq to'ldirilishi uchun tayyorlangan placeholder joydir.
+The `assets/images/` folder is a placeholder location for real hotel images later.

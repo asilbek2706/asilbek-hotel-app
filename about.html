@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Grand Hotel Uzbekistan haqida - xizmatlar, missiya va mehmonxona muhiti."
+      content="Grand Hotel Uzbekistan haqida - xizmatlar, missiya va mehmonxona muhiti. Bizning tariximiz va maqsadimiz."
     />
-    <title>Grand Hotel Uzbekistan | Biz haqimizda</title>
+    <title>Biz haqimizda | Grand Hotel Uzbekistan</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <header class="site-header" data-header>
       <div class="container nav-shell">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">G</span>
+        <a class="brand" href="index.html" aria-label="Grand Hotel Uzbekistan bosh sahifasi">
+          <span class="brand-mark" aria-hidden="true">G</span>
           <span class="brand-text">Grand Hotel Uzbekistan</span>
         </a>
         <button
@@ -23,23 +23,27 @@
           type="button"
           aria-expanded="false"
           aria-controls="site-nav"
+          aria-label="Menyuni ochish"
         >
-          <span></span><span></span><span></span>
-          <span class="sr-only">Menyuni ochish</span>
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
         </button>
         <nav class="site-nav" id="site-nav" data-nav>
-          <a href="index.html">Bosh sahifa</a>
-          <a href="rooms.html">Xonalar</a>
-          <a href="booking.html">Bron qilish</a>
-          <a class="active" href="about.html">Biz haqimizda</a>
-          <a href="contact.html">Aloqa</a>
+          <ul class="nav-list">
+            <li><a href="index.html">Bosh sahifa</a></li>
+            <li><a href="rooms.html">Xonalar</a></li>
+            <li><a href="booking.html">Bron qilish</a></li>
+            <li><a class="active" href="about.html" aria-current="page">Biz haqimizda</a></li>
+            <li><a href="contact.html">Aloqa</a></li>
+          </ul>
         </nav>
       </div>
     </header>
 
-    <main class="section" data-reveal>
+    <main class="section" id="main-content" data-reveal>
       <div class="container about-layout">
-        <div>
+        <div class="about-content">
           <p class="eyebrow">Biz haqimizda</p>
           <h1>Mehmon uchun tartibli, xotirjam va ishonchli tajriba.</h1>
           <p class="lead">
@@ -64,16 +68,25 @@
           </div>
         </div>
         <div class="image-stack" aria-label="Mehmonxona vizual muhiti">
-          <div class="image-panel"></div>
-          <div class="image-panel small"></div>
+          <div class="image-panel card overflow-hidden">
+             <img src="assets/images/hotel-exterior.jpg" alt="Grand Hotel Uzbekistan tashqi ko'rinishi" class="stack-img">
+          </div>
+          <div class="image-panel small card overflow-hidden">
+             <img src="assets/images/executive-suite.jpg" alt="Mehmonxona lyuks xonasi" class="stack-img">
+          </div>
         </div>
       </div>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <p>&copy; <span data-year></span> Grand Hotel Uzbekistan.</p>
-        <p>Mehmonxona haqida ma’lumot.</p>
+        <div class="footer-brand">
+          <span class="brand-text">Grand Hotel Uzbekistan</span>
+          <p>O'zbekona mehmondo'stlikning yuksak namunasi.</p>
+        </div>
+        <div class="footer-copy">
+          <p>&copy; <span data-year></span> Barcha huquqlar himoyalangan.</p>
+        </div>
       </div>
     </footer>
   </body>

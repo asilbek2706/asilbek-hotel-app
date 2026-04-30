@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Grand Hotel Uzbekistan bron qilish sahifasi - xona, sana va narx kalkulyatori."
+      content="Grand Hotel Uzbekistan bron qilish sahifasi - xona, sana va narx kalkulyatori. Safaringizni rejalashtiring."
     />
-    <title>Grand Hotel Uzbekistan | Bron qilish</title>
+    <title>Bron qilish | Grand Hotel Uzbekistan</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <header class="site-header" data-header>
       <div class="container nav-shell">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">G</span>
+        <a class="brand" href="index.html" aria-label="Grand Hotel Uzbekistan bosh sahifasi">
+          <span class="brand-mark" aria-hidden="true">G</span>
           <span class="brand-text">Grand Hotel Uzbekistan</span>
         </a>
         <button
@@ -23,73 +23,79 @@
           type="button"
           aria-expanded="false"
           aria-controls="site-nav"
+          aria-label="Menyuni ochish"
         >
-          <span></span><span></span><span></span>
-          <span class="sr-only">Menyuni ochish</span>
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
         </button>
         <nav class="site-nav" id="site-nav" data-nav>
-          <a href="index.html">Bosh sahifa</a>
-          <a href="rooms.html">Xonalar</a>
-          <a class="active" href="booking.html">Bron qilish</a>
-          <a href="about.html">Biz haqimizda</a>
-          <a href="contact.html">Aloqa</a>
+          <ul class="nav-list">
+            <li><a href="index.html">Bosh sahifa</a></li>
+            <li><a href="rooms.html">Xonalar</a></li>
+            <li><a class="active" href="booking.html" aria-current="page">Bron qilish</a></li>
+            <li><a href="about.html">Biz haqimizda</a></li>
+            <li><a href="contact.html">Aloqa</a></li>
+          </ul>
         </nav>
       </div>
     </header>
 
-    <main class="section" data-reveal>
+    <main class="section" id="main-content" data-reveal>
       <div class="container booking-layout">
         <section class="card form-card">
-          <p class="eyebrow">Bron qilish</p>
+          <p class="eyebrow">Onlayn bron qilish</p>
           <h1>Safaringiz narxini tez hisoblang.</h1>
           <form class="booking-form" data-booking-form>
-            <label>
-              Xona turi
-              <select name="roomType" data-room-select>
-                <option value="90">Standard Room</option>
-                <option value="140">Deluxe Room</option>
-                <option value="180">Family Deluxe</option>
-                <option value="220">Executive Suite</option>
+            <div class="form-group">
+              <label for="roomType">Xona turi</label>
+              <select name="roomType" id="roomType" data-room-select required>
+                <option value="90">Standard Room - $90</option>
+                <option value="140">Deluxe Room - $140</option>
+                <option value="180">Family Deluxe - $180</option>
+                <option value="220">Executive Suite - $220</option>
               </select>
-            </label>
-            <label>
-              Kirish sanasi
-              <input type="date" name="checkIn" data-check-in required />
-            </label>
-            <label>
-              Chiqish sanasi
-              <input type="date" name="checkOut" data-check-out required />
-            </label>
-            <label>
-              Mehmonlar soni
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="checkIn">Kirish sanasi</label>
+                <input type="date" name="checkIn" id="checkIn" data-check-in required />
+              </div>
+              <div class="form-group">
+                <label for="checkOut">Chiqish sanasi</label>
+                <input type="date" name="checkOut" id="checkOut" data-check-out required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="guests">Mehmonlar soni</label>
               <input
                 type="number"
                 name="guests"
+                id="guests"
                 min="1"
                 max="6"
                 value="2"
                 required
               />
-            </label>
-            <button class="btn btn-primary" type="submit">
-              Narxni hisoblash
-            </button>
+            </div>
+            <button class="btn btn-primary" type="submit">Narxni hisoblash</button>
           </form>
         </section>
 
         <aside class="card summary-card">
           <h2>Bron xulosasi</h2>
-          <div class="summary-row">
-            <span>Bir tun narxi</span>
-            <strong data-night-price>$90</strong>
-          </div>
-          <div class="summary-row">
-            <span>Taxminiy jami</span>
-            <strong data-total-price>$0</strong>
+          <div class="summary-details">
+            <div class="summary-row">
+              <span>Bir tun narxi</span>
+              <strong data-night-price>$90</strong>
+            </div>
+            <div class="summary-row total">
+              <span>Taxminiy jami</span>
+              <strong data-total-price>$0</strong>
+            </div>
           </div>
           <p class="summary-note" data-booking-note>
-            Xona turi va sanalarni tanlaganingizdan keyin umumiy narx shu yerda
-            chiqadi.
+            Xona turi va sanalarni tanlaganingizdan keyin umumiy narx shu yerda chiqadi.
           </p>
         </aside>
       </div>
@@ -97,8 +103,13 @@
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <p>&copy; <span data-year></span> Grand Hotel Uzbekistan.</p>
-        <p>Bron qilish va tarif kalkulyatori.</p>
+        <div class="footer-brand">
+          <span class="brand-text">Grand Hotel Uzbekistan</span>
+          <p>Tezkor va xavfsiz onlayn bron tizimi.</p>
+        </div>
+        <div class="footer-copy">
+          <p>&copy; <span data-year></span> Barcha huquqlar himoyalangan.</p>
+        </div>
       </div>
     </footer>
   </body>

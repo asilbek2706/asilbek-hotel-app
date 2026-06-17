@@ -1,156 +1,125 @@
-<!doctype html>
-<html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Grand Hotel Uzbekistan - Toshkent markazidagi premium mehmonxona. Shinam xonalar, yuqori sifatli xizmat va unutilmas dam olish."
-    />
-    <title>Grand Hotel Uzbekistan | Toshkentdagi Premium Mehmonxona</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/main.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header" data-header>
-      <div class="container nav-shell">
-        <a
-          class="brand"
-          href="index.html"
-          aria-label="Grand Hotel Uzbekistan bosh sahifasi"
-        >
-          <span class="brand-mark" aria-hidden="true">G</span>
-          <span class="brand-text">Grand Hotel Uzbekistan</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Menyuni ochish"
-        >
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-        <nav class="site-nav" id="site-nav" data-nav>
-          <ul class="nav-list">
-            <li><a class="active" href="index.html" aria-current="page">Bosh sahifa</a></li>
-            <li><a href="rooms.html">Xonalar</a></li>
-            <li><a href="booking.html">Bron qilish</a></li>
-            <li><a href="about.html">Biz haqimizda</a></li>
-            <li><a href="contact.html">Aloqa</a></li>
-          </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-STORE | Premium Future-Ready E-commerce</title>
+    <meta name="description" content="Discover the future of retail with CYBER-STORE. Premium tech and lifestyle products with a cyber-noir aesthetic.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <a href="#" class="logo">CYBER<span>STORE</span></a>
+
+            <div class="search-bar">
+                <input type="text" id="product-search" placeholder="Search products...">
+                <button type="button" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
         </nav>
-      </div>
     </header>
 
-    <main id="main-content">
-      <section class="hero" data-reveal aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Toshkent markazida</p>
-            <h1 id="hero-title">Shahar ritmi ichida sokin va puxta mehmondo‘stlik.</h1>
-            <p class="lead">
-              Grand Hotel Uzbekistan ish safari, oilaviy dam olish va maxsus
-              uchrashuvlar uchun qulay xonalar, restoran, spa va 24/7 servisni
-              bir joyda jamlaydi.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="booking.html">Bron qilish</a>
-              <a class="btn btn-secondary" href="rooms.html">Xonalarni ko‘rish</a>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="fade-in">Future of <span>Retail</span> is Here.</h1>
+                    <p class="fade-in">Experience premium tech and lifestyle products with a cyber-noir aesthetic. Curated for the modern inhabitant.</p>
+                    <div class="hero-actions fade-in">
+                        <a href="#shop" class="btn btn-primary">Explore Shop</a>
+                        <a href="#featured" class="btn btn-outline">Featured Item</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in">
+                    <div class="glass-card">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=1000" alt="Featured Tech Product">
+                    </div>
+                </div>
             </div>
-            <ul class="hero-stats" aria-label="Mehmonxona ko‘rsatkichlari">
-              <li>
-                <strong data-counter="120">0</strong>
-                <span>Premium Xonalar</span>
-              </li>
-              <li>
-                <strong data-counter="18">0</strong>
-                <span>Yillik Tajriba</span>
-              </li>
-              <li>
-                <strong data-counter="4.9">0</strong>
-                <span>Mehmon Bahosi</span>
-              </li>
-            </ul>
-          </div>
-          <div class="hero-visual card" aria-label="Grand Hotel Uzbekistan binosi">
-            <img src="assets/images/hotel-exterior.jpg" alt="Grand Hotel Uzbekistan binosining tashqi ko'rinishi" class="hero-img">
-            <div class="floating-card">
-              <p>Eng ko‘p tanlanadigan xizmat</p>
-              <strong>24/7 reception va transfer</strong>
+        </section>
+
+        <section id="shop" class="products-section container">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="bento-grid" id="product-grid">
+                <!-- Products will be dynamically rendered here -->
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section section-band" data-reveal aria-labelledby="features-title">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Afzalliklar</p>
-            <h2 id="features-title">Har bir detal mehmon tajribasiga xizmat qiladi.</h2>
-          </div>
-          <div class="feature-grid">
-            <article class="card feature-card" data-index="01">
-              <h3>Markaziy joylashuv</h3>
-              <p>
-                Shahar biznes markazlari, restoranlar va asosiy manzillarga
-                tez yetib borish uchun qulay lokatsiya.
-              </p>
-            </article>
-            <article class="card feature-card" data-index="02">
-              <h3>To‘liq servis</h3>
-              <p>
-                Nonushta, restoran, spa, konferensiya xonalari va transfer
-                xizmati bitta tizimda ishlaydi.
-              </p>
-            </article>
-            <article class="card feature-card" data-index="03">
-              <h3>Sokin atmosfera</h3>
-              <p>
-                Xonalar va umumiy zonalar dam olish, diqqatni jamlash va
-                xotirjam qolish uchun muvozanatli rejalangan.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" data-reveal aria-labelledby="summary-title">
-        <div class="container split-layout">
-          <div>
-            <p class="eyebrow">Qisqa ma’lumot</p>
-            <h2 id="summary-title">Standartdan suite darajasigacha.</h2>
-            <p class="lead">
-              Mehmonxona xonalari qulay yotoq, ish maydoni, shaxsiy hammom va
-              kundalik xizmat bilan jihozlangan. Tariflar mehmon soni va xona
-              turiga qarab hisoblanadi.
-            </p>
-            <a class="text-link" href="about.html">Mehmonxona haqida ko'proq bilish</a>
-          </div>
-          <div class="card checklist-card">
-            <ul class="clean-list">
-              <li>Keng va tinch xonalar</li>
-              <li>Restoran va nonushta xizmati</li>
-              <li>Spa va dam olish hududi</li>
-              <li>Transfer va reception yordami</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        <section id="featured" class="featured-section container">
+            <div class="glass-card featured-banner">
+                <div class="featured-content">
+                    <span class="eyebrow">Limited Edition</span>
+                    <h2>Obsidian Series Pro</h2>
+                    <p>The peak of performance and aesthetics. Available for a limited time only.</p>
+                    <button class="btn btn-primary">Pre-order Now</button>
+                </div>
+                <div class="featured-visual">
+                    <img src="https://images.unsplash.com/photo-1542393545-10f5cde2c810?auto=format&fit=crop&q=80&w=600" alt="Featured Obsidian Product">
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <span class="brand-text">Grand Hotel Uzbekistan</span>
-          <p>Toshkent markazidagi premium mehmonxona.</p>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <a href="#" class="logo">CYBER<span>STORE</span></a>
+                <p>Premium aesthetics, high performance. The ultimate destination for tech enthusiasts.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest drops.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Join</button>
+                </form>
+            </div>
         </div>
-        <div class="footer-copy">
-          <p>&copy; <span data-year></span> Barcha huquqlar himoyalangan.</p>
+        <div class="footer-bottom container">
+            <p>&copy; 2024 CYBERSTORE. All rights reserved.</p>
         </div>
-      </div>
     </footer>
-  </body>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be rendered here -->
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block">Checkout Now</button>
+        </div>
+    </div>
+</body>
 </html>
